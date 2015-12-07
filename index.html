@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Finterest</title>
-        <link rel="stylesheet" href="./styles/main.css">
-    </head>
-<body ng-app="FinterestScript">
+  <head>
+    <meta charset="utf-8">
+    <title>Finterest</title>
+    <link rel="stylesheet" href="./lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+  </head>
+  <body ng-app="FinterestScript">
 
 
-       
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <a class="navbar-brand" href="#">Finterest</a>
+          <div class="navbar-form navbar-left" role="search">
+            <!-- <div class="form-group"> -->
+              <input type="text" class="form-control navbar-search" placeholder="Search">
+            <!-- </div> -->
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Username</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
-    
-        
-
-        <!-- LIST MUSIC PAGE MATERIAL -->
-        <div>
-            
-             <!-- Front page view -->
-            <div ng-view></div>
-
-        </div> <!-- close results angular controller -->
-
-
-        <!-- Song Information Partial -->
+    <!-- Front page view -->
+    <div ng-view></div>
 
 
     <!-- JAVASCRIPT LAND -->
@@ -35,8 +40,8 @@
     <script src="javascripts/app.js"></script>
     <!-- // <script src="javascripts/factories/SongStorage.js"></script> -->
     <script src="javascripts/controllers/main.js"></script>
-   <!--  // <script src="javascripts/controllers/SongAddCtrl.js"></script>
+    <!--  // <script src="javascripts/controllers/SongAddCtrl.js"></script>
     // <script src="javascripts/controllers/SongDetailCtrl.js"></script> -->
 
-</body>
+  </body>
 </html>
