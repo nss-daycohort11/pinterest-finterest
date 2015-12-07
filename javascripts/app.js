@@ -5,7 +5,7 @@ app.config(['$routeProvider',
     $routeProvider
       .when('/pins', {
         templateUrl: 'partials/main.html',
-        controller: 'MainPinCtrl'
+        controller: 'SearchCtrl'
       })
       // .when()
       .otherwise("/pins");
