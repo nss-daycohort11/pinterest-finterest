@@ -1,4 +1,5 @@
-app.controller("SampleCtrl", function($scope, $firebaseAuth) {
+app.controller("AuthCtrl", 
+  ["$scope","$firebaseAuth","auth-data", function($scope, $firebaseAuth, getUid) {
   var ref = new Firebase("https://pinterestfinterest.firebaseio.com");
   // create an instance of the authentication service
   var auth = $firebaseAuth(ref);
