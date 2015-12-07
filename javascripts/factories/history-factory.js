@@ -1,5 +1,4 @@
-
-app.factory("getStorage", function() {
+app.factory("history-factory", function() {
   var bucket = '';
 
   return {

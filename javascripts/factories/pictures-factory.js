@@ -1,5 +1,4 @@
-
-app.factory("getPics", function($q, $http) {
+app.factory("pictures-factory", function($q, $http) {
   return {
    getPics: function(url) {
      return $q(function(resolve, reject) {

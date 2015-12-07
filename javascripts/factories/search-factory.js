@@ -1,5 +1,5 @@
 
-app.factory("getStorage", function() {
+app.factory("search-factory", function() {
   var bucket = '';
 
   return {
