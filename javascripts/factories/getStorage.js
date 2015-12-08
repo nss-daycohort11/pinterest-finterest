@@ -1,4 +1,6 @@
 app.factory("getStorage", function() {
+
+
   var storage = '';
 
   return {
@@ -12,4 +14,7 @@ app.factory("getStorage", function() {
       return storage;
     }
   };
+
+
+
 });

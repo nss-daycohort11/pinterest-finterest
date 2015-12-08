@@ -11,7 +11,7 @@ app.controller("AuthCtrl",
   auth.$authWithOAuthPopup("facebook").then(function(authData) {
   console.log("auth succeeded", authData );
   // set 
-  authDataStorage.setUid(authData.uid);
+  authDataStorage.addUid(authData.uid);
   
   
 
