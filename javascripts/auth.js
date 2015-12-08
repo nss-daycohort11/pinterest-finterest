@@ -1,9 +1,9 @@
 app.controller("AuthCtrl", 
 
-
   ["$scope","$firebaseAuth", "$firebaseArray", "auth-data", "$location", function($scope, $firebaseAuth, $firebaseArray, authDataStorage, $location) {
 
   
+
 
   
   var ref = new Firebase("https://pinterestfinterest.firebaseio.com");
@@ -16,12 +16,11 @@ app.controller("AuthCtrl",
   
 
   auth.$authWithOAuthPopup("facebook").then(function(authData) {
+
   console.log("auth succeded. payload:", authData.facebook.displayName );
   // set 
   authDataStorage.setUid(authData.uid);
-  authDataStorage.setName(authData.facebook.displayName)
-
-  
+  authDataStorage.setName(authData.facebook.displayName);
 
   var userId = authDataStorage.getUid();
   console.log("userId", userId);

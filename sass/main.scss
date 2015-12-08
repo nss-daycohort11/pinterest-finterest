@@ -1,10 +1,8 @@
+$darkred: #800000;
+
 body {
   background-color: #FFFFFF;
 }
-
-
-
-
 
 /*
 Navbar
@@ -90,8 +88,19 @@ Pin Columns
 	}
 }
 
-#columns:hover .pin:not(:hover) {
-	opacity: 0.4;
+.pin-button {
+	float: right;
+	display: inline;
+	background-color: $darkred;
+	border-radius: 15px;
+	color: white;
+}
+
+#columns:hover .pin:hover {
+	border: 1px solid $darkred;
+	.pin-button {
+		display: inline;
+	}
 }
 
 

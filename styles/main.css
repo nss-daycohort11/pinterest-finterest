@@ -69,7 +69,16 @@ Pin Columns
     -webkit-column-count: 5;
     -moz-column-count: 5;
     column-count: 5; } }
-#columns:hover .pin:not(:hover) {
-  opacity: 0.4; }
+.pin-button {
+  float: right;
+  display: inline;
+  background-color: #800000;
+  border-radius: 15px;
+  color: white; }
+
+#columns:hover .pin:hover {
+  border: 1px solid #800000; }
+  #columns:hover .pin:hover .pin-button {
+    display: inline; }
 
 /*# sourceMappingURL=main.css.map */
