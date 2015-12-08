@@ -3,7 +3,7 @@ app.factory("auth-data", function() {
 
   return {
     setUid: function(value) {
-      bucket = value;
+      storage = value;
       console.log("UID set :", storage);
       return storage;
     },
