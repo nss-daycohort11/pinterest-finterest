@@ -74,6 +74,7 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory",
     .then(function(photoData) {
       // Data from Flickr in an array
       var allSearchPhotos = photoData.photos.photo;
+      // console.log("allSearchPhotos", photoData.photos.photo);
 
 
       // Send array of all photo objects (which may/may not include url_o property, which is our ideal scenario) to function that returns an array of only those w/ url_o, as well as CAPTION as workingSearchPhotos.title

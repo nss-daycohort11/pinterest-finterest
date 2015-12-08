@@ -14,6 +14,7 @@ app.controller("MainPinCtrl", ["$scope", "$firebaseArray", "search-factory", "au
 	
 
 
+
 	// $scope.killPin = function(pin) {
 	// 	$scope.pins.$remove(pin);
 	// };
