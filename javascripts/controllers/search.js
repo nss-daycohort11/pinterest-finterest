@@ -26,7 +26,7 @@ app.controller("SearchCtrl", ["getStorage", "$q", "$http", "$scope",
     
 
        var getPhotos = $q(function(resolve, reject) {
-         $http.get('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=43bea15728db44fd9518bfe94f8527bb&format=json&nojsoncallback=1&text=cats&extras=url_o')       
+         $http.get('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=43bea15728db44fd9518bfe94f8527bb&format=json&nojsoncallback=1&text=kitten&extras=url_o')       
            .success(
              function(objectFromJSONFile) {
                // console.log("test", objectFromJSONFile);
