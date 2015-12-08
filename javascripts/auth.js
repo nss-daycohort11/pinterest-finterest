@@ -1,6 +1,6 @@
 app.controller("AuthCtrl", 
   ["$scope","$firebaseAuth","auth-data", function($scope, $firebaseAuth, authDataStorage) {
-  console.log("auth runs" );
+  // console.log("auth runs" );
   
   var ref = new Firebase("https://pinterestfinterest.firebaseio.com");
   // create an instance of the authentication service
@@ -9,7 +9,7 @@ app.controller("AuthCtrl",
   // login with Facebook
 
   auth.$authWithOAuthPopup("facebook").then(function(authData) {
-  console.log("auth succeeded", authData );
+  // console.log("auth succeeded", authData );
   // set 
   authDataStorage.addUid(authData.uid);
   
