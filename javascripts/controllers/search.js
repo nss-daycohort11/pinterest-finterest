@@ -40,6 +40,7 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
 
   // function triggered from partials/main.html
   $scope.acquire_article = function() {
+    console.log("thensomestuff");
 
     // Setting up the call for our diffbot to extract relevant information; returns promise state
     var webScraper = $q(function(resolve, reject) {
@@ -61,6 +62,8 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
 
           console.log("amIa suer", authDataStorage.getUid());
 
+          console.log(diffbotResult);
+
           // specific location of results for us to use
           var infoToProcess = diffbotResult.objects[0];
 
@@ -75,6 +78,6 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
         });
 
     }   // close acquire_article fn
-
+    
 
 }]); // closes module
