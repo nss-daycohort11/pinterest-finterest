@@ -10,9 +10,10 @@ app.controller("AuthCtrl",
   var auth = $firebaseAuth(ref);
   // login with Facebook
   auth.$authWithOAuthPopup("facebook").then(function(authData) {
-  console.log("auth succeded. payload:", auth );
+  console.log("auth succeded. payload:", authData.facebook.displayName );
   // set 
   authDataStorage.setUid(authData.uid);
+  authDataStorage.setName(authData.facebook.displayName)
 
   
 
