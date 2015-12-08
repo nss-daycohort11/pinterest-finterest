@@ -6,17 +6,15 @@ app.controller("MainPinCtrl", ["$scope", "$firebaseArray", "search-factory", "au
 //need to drill down to the pins
   console.log("userRef", userRef );
 
+    $scope.setTerm = function () {
+      getStorage.addTerm($scope.searchTerm);
+      // console.log("hello?", setTerm);
+    };
 
-
-
-  
   $scope.pins = $firebaseArray(userRef);
-
-
 
 	// console.log("$scope.pins :", $scope.pins);
 	
-
 	$scope.setTerm = function () {
 		searchFactory.setSearch($scope.searchTerm);
 	};

@@ -1,6 +1,26 @@
 app.controller("SearchCtrl", ["$q", "$http", "$scope",
   function($q, $http, $scope) {
     
+  (function() {
+    $scope.photos = [];
+    var url = getStorage.getTerm();
+    console.log("url", url);
+    if (url === "" || url === undefined) {
+      console.log(url);
+    } else {
+      getPics.getPics(url).then(
+        function(data) {
+          var photos = data.photos.photo;
+          photos = photos.filter(function(obj) {
+              return (obj.url_o !== undefined);
+          });
+          for (var key in photos) {
+            $scope.photos.push(photos[key]);
+          }
+        }
+      );
+    }
+  }());
 
     
 
@@ -38,3 +58,4 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope",
       
 
 }]);
+

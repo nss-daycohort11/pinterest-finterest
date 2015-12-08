@@ -2,7 +2,8 @@ app.factory("auth-data", function() {
   var storage = '';
 
   return {
-    setUid: function(value) {
+
+    addUid: function(value) {
       storage = value;
       console.log("UID set :", storage);
       return storage;
