@@ -12,9 +12,9 @@
       </div>
     </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><input type="text" placeholder="Add a pin!"class="form-control navbar-search">
-        <li><input type="text" placeholder="Category?"class="form-control navbar-search">
-        <button id="single-button" class="btn btn-primary">Pin!</button></li>
+        <li><input type="text" placeholder="Add a pin!"class="form-control navbar-search" ng-model="user_provided_url">
+        <li><input type="text" placeholder="Category?"class="form-control navbar-search" ng-model="user_corresponding_category">
+        <button id="single-button" class="btn btn-primary" ng-click="acquire_article()">Pin!</button></li>
         <li><a href="/#/userToBeChangedViaRoute">Username</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
