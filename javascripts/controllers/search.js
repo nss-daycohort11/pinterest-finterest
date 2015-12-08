@@ -15,6 +15,7 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope",
              }
            );  
         });
+       
        getPhotos
         .then(function(photoData) {
           //success function

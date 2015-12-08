@@ -1,4 +1,3 @@
-
 app.controller("MainPinCtrl", ["$scope","$firebaseArray", "getPics","search-factory", function($scope, $firebaseArray, getPics, searchFactory){
 	var ref = new Firebase("https://group-pinterest.firebaseio.com/pinRef/");
 

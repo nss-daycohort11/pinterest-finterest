@@ -13,4 +13,4 @@ app.controller("AuthCtrl",
     console.log("Authentication failed:", error);
   });
   getUid.addUid(authData.uid);
-});
+}]);
