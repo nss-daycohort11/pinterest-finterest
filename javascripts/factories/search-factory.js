@@ -1,4 +1,3 @@
-
 app.factory("search-factory", function() {
   var bucket = '';
 
