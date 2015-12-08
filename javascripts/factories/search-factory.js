@@ -4,11 +4,10 @@ app.factory("search-factory", function() {
   return {
     setSearch: function(value) {
       bucket = value;
-      console.log("bucket :", bucket);
       return bucket;
     },
     getSearch: function() {
-      console.log("bucket :", bucket);
+      // console.log("bucket :", bucket);
       return bucket;
     }
   };

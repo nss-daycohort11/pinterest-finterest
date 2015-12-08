@@ -1,4 +1,4 @@
-app.controller("MainPinCtrl", ["$scope", "$firebaseArray", "search-factory", "auth-data","getStorage", function($scope, $firebaseArray,  searchFactory, authData, getStorage){
+app.controller("MainPinCtrl", ["$scope", "$firebaseArray", "search-factory", "auth-data", function($scope, $firebaseArray,  searchFactory, authData){
 	// var userRef = new Firebase("https://group-pinterest.firebaseio.com/users/" + authData.getUid +"/");
 
   
@@ -6,22 +6,15 @@ app.controller("MainPinCtrl", ["$scope", "$firebaseArray", "search-factory", "au
 //need to drill down to the pins
   // console.log("userRef", userRef );
 
-    $scope.setTerm = function () {
-      getStorage.addTerm($scope.searchTerm);
-      // console.log("hello?", setTerm);
-    };
-
   // $scope.pins = $firebaseArray(userRef);
 
 	// console.log("$scope.pins :", $scope.pins);
 	
-	$scope.setTerm = function () {
-		searchFactory.setSearch($scope.searchTerm);
-	};
 
-	$scope.killPin = function(pin) {
-		$scope.pins.$remove(pin);
-	};
+
+	// $scope.killPin = function(pin) {
+	// 	$scope.pins.$remove(pin);
+	// };
 
 
   $scope.status = {
