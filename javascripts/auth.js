@@ -1,5 +1,7 @@
 app.controller("AuthCtrl", 
-  ["$scope","$firebaseAuth","auth-data", function($scope, $firebaseAuth, authDataStorage) {
+
+  ["$scope","$firebaseAuth", "$firebaseArray", "auth-data", "$location", function($scope, $firebaseAuth, $firebaseArray, authDataStorage, $location) {
+
   
   
   var ref = new Firebase("https://pinterestfinterest.firebaseio.com");
@@ -8,10 +10,22 @@ app.controller("AuthCtrl",
   var auth = $firebaseAuth(ref);
   // login with Facebook
   auth.$authWithOAuthPopup("facebook").then(function(authData) {
-  console.log("auth succeded. payload:" auth );
+  console.log("auth succeded. payload:", auth );
   // set 
   authDataStorage.setUid(authData.uid);
+
   
+
+  var userId = authDataStorage.getUid();
+  console.log("userId", userId);
+  var ref = new Firebase("https://pinterestfinterest.firebaseio.com/users/"+userId+"/");
+    $scope.pins = $firebaseArray(ref);
+    console.log("scope.pins", $scope.pins );
+
+    
+  
+    $location.path('/')
+
   }).catch(function(error) {
     console.log("Authentication failed:", error);
   });
