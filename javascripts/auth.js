@@ -1,5 +1,6 @@
 app.controller("AuthCtrl", 
   ["$scope","$firebaseAuth","auth-data", function($scope, $firebaseAuth, getUid) {
+  console.log("auth runs" );
   
   var ref = new Firebase("https://pinterestfinterest.firebaseio.com");
   // create an instance of the authentication service
@@ -12,5 +13,5 @@ app.controller("AuthCtrl",
   }).catch(function(error) {
     console.log("Authentication failed:", error);
   });
-  getUid.addUid(authData.uid);
+  // getUid.addUid(authData.uid);
 }]);

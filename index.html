@@ -27,6 +27,12 @@
       </div><!-- /.container-fluid -->
     </nav>
 
+<section ng-controller="AuthCtrl">
+
+  </section>
+  
+
+
     <!-- Front page view -->
     <div ng-view></div>
 
@@ -38,9 +44,11 @@
     <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
 
 
-    <script src="javascripts/app.js"></script>
 
-    <script src="javascripts/controllers/main.js"></script>
-  
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/factories/auth-data.js"></script> 
+    <script src="javascripts/auth.js"></script> 
+
+    <!-- // <script src="javascripts/controllers/main.js"></script> -->
   </body>
 </html>

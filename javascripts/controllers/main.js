@@ -1,11 +1,21 @@
-app.controller("MainPinCtrl", ["$scope","$firebaseArray", "getPics","search-factory", function($scope, $firebaseArray, getPics, searchFactory){
-	var ref = new Firebase("https://group-pinterest.firebaseio.com/pinRef/");
+app.controller("MainPinCtrl", ["$scope","$firebaseArray", "getPics","search-factory", "auth-data", function($scope, $firebaseArray, getPics, searchFactory, authData){
+	var userRef = new Firebase("https://group-pinterest.firebaseio.com/users/" + authData.getUid +"/");
 
-  // $scope.showBoolean = true;
+  
+//names the pins we download from the 
+//need to drill down to the pins
+  $firebaseArray(userRef);
+  console.log("userRef", userRef );
 
-	$scope.pins = $firebaseArray(ref);
+
+
+
+  $scope.pins = 
+
+
+
 	// console.log("$scope.pins :", $scope.pins);
-	$scope.filters = {};
+	
 
 	$scope.setTerm = function () {
 		searchFactory.setSearch($scope.searchTerm);
@@ -14,6 +24,7 @@ app.controller("MainPinCtrl", ["$scope","$firebaseArray", "getPics","search-fact
 	$scope.killPin = function(pin) {
 		$scope.pins.$remove(pin);
 	};
+
 
   $scope.status = {
     isopen: false
@@ -44,10 +55,6 @@ app.controller("MainPinCtrl", ["$scope","$firebaseArray", "getPics","search-fact
     $scope.status.isopen = !$scope.status.isopen;
   };
 
-  $scope.killPin = function(pin) {
-		console.log("click");
-		$scope.pins.$remove(pin);
-	};
 
   
 }]);
