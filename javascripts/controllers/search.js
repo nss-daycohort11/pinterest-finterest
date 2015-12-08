@@ -1,12 +1,40 @@
-app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory",
+app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-data",
 
-  function($q, $http, $scope, searchFactory) {
+  function($q, $http, $scope, searchFactory, authDataStorage) {
 
   //////////////////// User Adding Pin Functionality //////////////////////
 
   $scope.user_provided_url = "";
   $scope.user_corresponding_category = "";
 
+  // function to process diffbot webscraping results
+  function createPin(object) {
+
+
+    // creating the shape of the object of what we're going to us
+    var userPin = {
+      category: $scope.user_corresponding_category, // stores user provided category
+      text: object.text,
+      url: object.pageUrl,
+      image: object.images[0].url,
+      caption: object.images[0].title,
+      html: object.html
+    };
+    console.log("userPin", userPin);
+    return userPin;
+
+  }
+
+  function storePin(object) {
+    console.log("object", object);
+
+    var userId = authDataStorage.getUid();
+    var userRef = new Firebase("https://pinterestfinterest.firebaseio.com/user_database/" + userId + "/");
+    userRef.push(object.url);
+
+    var pinRef = new Firebase("https://pinterestfinterest.firebaseio.com/pin_database/");
+    pinRef.push(object);
+  }
 
   // function triggered from partials/main.html
   $scope.acquire_article = function() {
@@ -31,13 +59,16 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory",
           var infoToProcess = diffbotResult.objects[0];
 
           // send to process, to extract only information we're going to need
-          createPin(infoToProcess);
+          var createdPin = createPin(infoToProcess);
+          console.log("createdPin", createdPin);
+
+          storePin(createdPin);
         },
         function() {
 
         });
 
+    }   // close acquire_article fn
 
-    }    
 
 }]); // closes module
