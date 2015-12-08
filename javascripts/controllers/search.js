@@ -2,6 +2,7 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
 
   function($q, $http, $scope, searchFactory, authDataStorage) {
 
+
   //////////////////// User Adding Pin Functionality //////////////////////
 
   $scope.user_provided_url = "";
@@ -9,6 +10,7 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
 
   // function to process diffbot webscraping results
   function createPin(object) {
+    console.log("hellooo", object);
 
 
     // creating the shape of the object of what we're going to us
@@ -16,8 +18,8 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
       category: $scope.user_corresponding_category, // stores user provided category
       text: object.text,
       url: object.pageUrl,
-      image: object.images[0].url,
-      caption: object.images[0].title,
+      // image: object.images[0].url,
+      // caption: object.images[0].title,
       html: object.html
     };
     console.log("userPin", userPin);
@@ -55,6 +57,10 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
     webScraper
       .then(
         function(diffbotResult) {
+
+
+          console.log("amIa suer", authDataStorage.getUid());
+
           // specific location of results for us to use
           var infoToProcess = diffbotResult.objects[0];
 
