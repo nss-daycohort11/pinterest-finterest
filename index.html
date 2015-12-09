@@ -13,23 +13,32 @@
     <!-- Navigation -->
     <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
         <a class="navbar-brand" href="/#/">Finterest</a>
+
         <div class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <!-- Search Bar -->
-            <input type="text" class="form-control navbar-search" placeholder="Search" ng-model="searchTerm" />
-            <!-- Search Button -->
-            <button id="single-button" class="btn btn-primary"><a class="search-btn" id="searchTerm" ng-click="setTerm()" href="/#/search">Search</a></button>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Search Bar -->
+                <li><input type="text" class="form-control navbar-search" placeholder="Search" ng-model="searchTerm" /></li>
+                <!-- Search Button -->
+                <li><button id="single-button" class="btn btn-primary"><a class="search-btn" id="searchTerm" ng-click="setTerm()" href="/#/search">Search</a></button></li>
+            </ul>
           </div>
         </div>
-          <ul class="nav navbar-nav navbar-right" ng-controller="AuthCtrl">
-            <li><input type="text" placeholder="Add a pin!"class="form-control navbar-search" ng-model="user_provided_url">
-            <li><input type="text" placeholder="Category?"class="form-control navbar-search" ng-model="user_corresponding_category">
-            <button id="single-button" class="btn btn-primary" ng-click="acquire_article()">Pin!</button></li>
-            <li><a href="/#/user">Welcome, {{ user_name }}</a></li>
-          </ul> <!-- /ng-controller -->
-        </div><!-- /.navbar-collapse -->
+
+        <div class="navbar-form navbar-right" role="add-pin">
+           <div class="form-group">
+              <ul class="nav navbar-nav navbar-right" ng-controller="AuthCtrl">
+                <li><input type="text" placeholder="Add a pin!"class="form-control navbar-search" ng-model="user_provided_url"></li>
+                <li><input type="text" placeholder="Category?"class="form-control navbar-search" ng-model="user_corresponding_category"></li>
+                <li><button id="single-button" class="btn btn-primary" ng-click="acquire_article()">Pin!</button></li>
+                <li><a href="/#/{{userId}}">Welcome, {{ user_name }}</a></li>
+              </ul> <!-- /ng-controller -->
+            </div>
+        </div>
+
+
       </div><!-- /.container-fluid -->
     </nav>
 

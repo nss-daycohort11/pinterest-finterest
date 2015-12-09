@@ -1,8 +1,10 @@
 app.controller("AuthCtrl", 
 
-  ["$scope","$firebaseAuth", "$firebaseArray", "auth-data", "$location", function($scope, $firebaseAuth, $firebaseArray, authDataStorage, $location) {
+  ["$q", "$http", "$scope","$firebaseAuth", "$firebaseArray", "auth-data", "$location", function($q, $http, $scope, $firebaseAuth, $firebaseArray, authDataStorage, $location) {
 
   var ref = new Firebase("https://pinterestfinterest.firebaseio.com");
+  var pinRef = new Firebase("https://pinterestfinterest.firebaseio.com/pin_database/");
+
   // create an instance of the authentication service
   
   var auth = $firebaseAuth(ref);
@@ -15,7 +17,8 @@ app.controller("AuthCtrl",
     authDataStorage.setName(authData.facebook.displayName);
 
     var userId = authDataStorage.getUid();
-
+    $scope.userId = authDataStorage.getUid();
+    
     var ref = new Firebase("https://pinterestfinterest.firebaseio.com/user_database/" + userId + "/");
     $scope.pins = $firebaseArray(ref);
     $scope.user_name = authDataStorage.getName();
@@ -70,8 +73,10 @@ app.controller("AuthCtrl",
      $http.get("http://api.diffbot.com/v3/article?token=1d13be5cf6b5835e97fd6a89ad11640c&url=" + $scope.user_provided_url)       
        .success(
          function(objectFromDiffbot) {
+          console.log("objectFromDiffbot", objectFromDiffbot);
            resolve(objectFromDiffbot);
          },function(error) {
+            console.log("error", error);
            reject(error);
          }
        );  
