@@ -8,19 +8,26 @@ app.controller("UserBoardsCtrl", ["$scope", "$routeParams", "auth-data", "$fireb
 
   var userRef = new Firebase("https://pinterestfinterest.firebaseio.com/user_database/" + $scope.userId);
 
-  $scope.user_pins = $scope.all_pins;
+  $scope.user_pins = $firebaseArray(userRef);
+  // Figure out a way to only show those pins connected to a user_pins
 
-  // Figure out a way to only show those pins connected to a user
-  angular.forEach($scope.all_pins, function(fullPin) {
-  	angular.forEach($scope.user_pins, function(userPin) {
-  		if (userPin.$value === fullPin.url) {
-  			console.log("fullPin", fullPin);
-  			return fullPin;
-  		}
-  	});
-  	return fullPin;
-  });
+  $scope.matched = [];
+  $scope.all_pins.$loaded(function() {
 
 
+	  angular.forEach($scope.all_pins, function(fullPin) {
+	  	angular.forEach($scope.user_pins, function(userPin) {
+	  		if (userPin.$value === fullPin.url) {
+	  			console.log("before indexOf");
+	  			console.log($scope.matched);
+	  			$scope.matched.push(fullPin);
+	  			// if ($scope.matched.indexOf(fullPin) !== -1) {
+	  			// 	console.log("matched", $scope.matched);
+	  			// }
+	  		}
+	  	});
+	  	});
+	  $scope.matched;
+  })
 
 }]);
