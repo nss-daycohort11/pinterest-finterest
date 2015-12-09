@@ -1,5 +1,5 @@
 var app = angular.module("FinterestScript", ["firebase", "ngRoute"]);
-
+  
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider
@@ -7,7 +7,7 @@ app.config(['$routeProvider',
         templateUrl: 'partials/main.html',
         controller: 'SearchCtrl'
       })
-      .when('/userToBeChangedViaRoute', {
+      .when('/:userId', {
         templateUrl: 'partials/user-boards.html',
         controller: 'UserBoardsCtrl'
       })

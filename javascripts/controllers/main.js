@@ -29,6 +29,7 @@ app.controller("MainPinCtrl", ["$scope", "$firebaseArray", "search-factory", "au
     isFirstDisabled: false
   };
 
+
   $scope.showInput = function(context) {
     console.log("click");
     context.showBoolean = false;

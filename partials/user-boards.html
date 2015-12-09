@@ -1,22 +1,8 @@
 <div id="wrapper">
-  <div id="columns"> <!-- ng-repeat will begin here -->
-    <div class="pin">
-    <button class="pin-button" display="none">pin it</button>
-      <img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Sed feugiat consectetur pellentesque. Nam ac elit risus, 
-        ac blandit dui. Duis rutrum porta tortor ut convallis.
-        Duis rutrum porta tortor ut convallis.
-      </p>
-    </div>
-  
-    <div class="pin">
-      <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
-      <p>
-        Donec a fermentum nisi. 
-      </p>
-    </div>
-  
+
+  <div ng-repeat="pinObject in matched">
+    <h2>{{pinObject.category}}</h2>
+    <p class="board_pin" category="pinObject.category"><a href="{{pinObject.url}}">{{pinObject.caption}}</a></p>
   </div>
+
 </div>
