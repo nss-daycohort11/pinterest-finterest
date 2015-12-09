@@ -11,6 +11,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/user-boards.html',
         controller: 'UserBoardsCtrl'
       })
+      .when('/:userId/boardId', {
+        templateUrl: 'partials/board-details.html',
+        controller: 'BoardDetailsCtrl'
+      })
       // .when()
       .otherwise("/");
 }]);

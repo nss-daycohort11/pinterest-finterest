@@ -1,4 +1,4 @@
-app.controller("UserBoardsCtrl", ["$scope", "$routeParams", "auth-data", "$firebaseArray",
+app.controller("BoardDetailsCtrl", ["$scope", "$routeParams", "auth-data", "$firebaseArray",
   function($scope, $routeParams, authDataStorage, $firebaseArray) {
 
   var pinRef = new Firebase("https://pinterestfinterest.firebaseio.com/pin_database/");

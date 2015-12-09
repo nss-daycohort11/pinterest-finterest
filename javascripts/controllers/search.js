@@ -7,7 +7,7 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
 
 
   $scope.all_pins = $firebaseArray(pinRef);
-  console.log("all_pins", $scope.all_pins);
+  // console.log("all_pins", $scope.all_pins);
 
 
 

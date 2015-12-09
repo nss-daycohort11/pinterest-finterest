@@ -1,6 +1,8 @@
-app.controller("MainPinCtrl", ["$scope", "$firebaseArray", "search-factory", "auth-data", function($scope, $firebaseArray,  searchFactory, authData){
+app.controller("MainPinCtrl", ["$scope", "$firebaseArray", "search-factory", "auth-data", "$firebaseObject", function($scope, $firebaseArray,  searchFactory, authData, $firebaseObject){
 
-	// var userRef = new Firebase("https://group-pinterest.firebaseio.com/users/" + authData.getUid +"/");
+	// var ref = new Firebase("https://pinterestfinterest.firebaseio.com/");
+  // $scope.pinCollection = $firebaseObject(ref.child('user_database').child(authData.getUid()));
+// console.log("pin collection", pinCollection );
 
   
 //names the pins we download from the 

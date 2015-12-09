@@ -1,0 +1,17 @@
+<!-- Pinterest style Cascading of Material -->
+<div id="wrapper" ng-controller="BoardDetailsCtrl">
+  <div id="columns">
+
+
+
+    <div class="pin" ng-repeat="pinObject in all_pins">
+      <img src={{pinObject.image}} />
+      <p>
+        {{pinObject.caption}}
+      </p>
+    </div>
+  
+
+
+  </div>
+</div>
