@@ -18,7 +18,7 @@
 
         <div class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <div class="input-group">
+            <div class="nav navbar-nav navbar-right input-group">
                 <!-- Search Bar -->
                 <input type="text" class="form-control navbar-search" placeholder="Search" ng-model="searchTerm" />
                 <!-- Search Button -->
@@ -29,19 +29,18 @@
           </div>
         </div>
 
-        <div class="navbar-form navbar-right" role="add-pin">
-           <div class="form-group">
-              <div class="nav navbar-nav navbar-right input-group">
-                <input type="text" placeholder="Add a pin!"class="form-control navbar-search" ng-model="user_provided_url">
-                <input type="text" placeholder="Category?"class="form-control navbar-search" ng-model="user_corresponding_category">
-                <span class="input-group-btn">
-                    <button id="single-button" class="btn btn-default" ng-click="acquire_article()">Pin!</button>
-                </span>
-              </ul> <!-- /ng-controller -->
+        <a class="nav navbar-nav navbar-brand" href="/#/{{userId}}">Welcome, {{ user_name }}</a>
+        
+        <div class="navbar-right navbar-form">
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><input type="text" placeholder="URL to pin?"class="form-control navbar-search" ng-model="user_provided_url"></li>          
+                    <li><input type="text" placeholder="Category?"class="form-control navbar-search" ng-model="user_corresponding_category"></li>
+                    <li><button id="single-button" class="btn btn-danger" ng-click="acquire_article()">Pin!</button></li>                  
+                </ul>
             </div>
         </div>
         
-        <a class="nav navbar-brand navbar-right" href="/#/{{userId}}">Welcome, {{ user_name }}</a>
 
 
       </div><!-- /.container-fluid -->

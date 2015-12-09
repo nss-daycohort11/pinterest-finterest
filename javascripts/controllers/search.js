@@ -11,4 +11,6 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
 
 
 
+
+
   }]); // closes module
