@@ -1,8 +1,8 @@
 <div id="wrapper">
 
-  <div ng-repeat="pinObject in matched">
-    <h2>{{pinObject.category}}</h2>
-    <p class="board_pin" category="pinObject.category"><a href="{{pinObject.url}}">{{pinObject.caption}}</a></p>
+  <div ng-repeat="obj in matched | orderBy: 'category' ">
+    <h2>{{obj.category}}</h2>
+    <p class="board_pin" category="obj.category"><a href="{{obj.url}}">{{obj.caption}}</a></p>
   </div>
 
 </div>
