@@ -1,35 +1,38 @@
 $darkred: #800000;
 
 body {
-  background-color: #FFFFFF;
+  background-color: #cb2027;
 }
 
 /*
 Navbar
 */ 
 
-// .navbar-left {
-// 	width: 50%;
-// }
-
-// .navbar-form .form-control {
-// 	width: 100%;
-// }
-
-#single-button {
-	background-color: #B8091B;
-	color: #FAFAF5;
+.navbar-left {
+	width: 50%;
 }
 
-#navigationBar {
+.navbar-form .form-control {
+	width: 100%;
+}
+
+#single-button {
+	background-color: #cb2027;
+	border-color: white;
+}
+
+.search-btn {
+	color: white;
+	margin: 15px;
+}
+
+#form-group {
 	display: inline-block;
 }
 
-// #container-fluid {
-// 	width: 100%;
-// }
-
-
+.btn .btn-primary {
+	margin: 205px;
+}
 
 /*
 Pin Columns
