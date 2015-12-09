@@ -4,10 +4,10 @@
 
 
 
-    <div class="pin" ng-repeat="fullPhotoObject in flickrSearchPhotos">
-      <img src={{fullPhotoObject.url_o}} />
+    <div class="pin" ng-repeat="pinObject in all_pins">
+      <img src={{pinObject.image}} />
       <p>
-        {{fullPhotoObject.title}}
+        {{pinObject.caption}}
       </p>
     </div>
   
