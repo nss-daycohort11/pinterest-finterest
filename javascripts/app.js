@@ -1,5 +1,5 @@
 var app = angular.module("FinterestScript", ["firebase", "ngRoute"]);
-
+  
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider

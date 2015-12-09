@@ -1,12 +1,16 @@
-app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-data",
+app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-data", "$firebaseArray",
 
-  function($q, $http, $scope, searchFactory, authDataStorage) {
+  function($q, $http, $scope, searchFactory, authDataStorage, $firebaseArray) {
 
-
+    console.log("wat");
   //////////////////// User Adding Pin Functionality //////////////////////
+  var pinRef = new Firebase("https://pinterestfinterest.firebaseio.com/pin_database/");
 
   $scope.user_provided_url = "";
   $scope.user_corresponding_category = "";
+
+  $scope.all_pins = $firebaseArray(pinRef);
+  console.log("all_pins", $scope.all_pins);
 
   // function to process diffbot webscraping results
   function createPin(object) {
@@ -18,8 +22,8 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
       category: $scope.user_corresponding_category, // stores user provided category
       text: object.text,
       url: object.pageUrl,
-      // image: object.images[0].url,
-      // caption: object.images[0].title,
+      image: object.images[0].url,
+      caption: object.images[0].title,
       html: object.html
     };
     console.log("userPin", userPin);
@@ -34,7 +38,6 @@ app.controller("SearchCtrl", ["$q", "$http", "$scope", "search-factory", "auth-d
     var userRef = new Firebase("https://pinterestfinterest.firebaseio.com/user_database/" + userId + "/");
     userRef.push(object.url);
 
-    var pinRef = new Firebase("https://pinterestfinterest.firebaseio.com/pin_database/");
     pinRef.push(object);
   }
 
