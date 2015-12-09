@@ -23,12 +23,12 @@
             <button id="single-button" class="btn btn-primary"><a class="search-btn" id="searchTerm" ng-click="setTerm()" href="/#/search">Search</a></button>
           </div>
         </div>
-          <ul class="nav navbar-nav navbar-right" ng-controller="SearchCtrl">
+          <ul class="nav navbar-nav navbar-right" ng-controller="AuthCtrl">
             <li><input type="text" placeholder="Add a pin!"class="form-control navbar-search" ng-model="user_provided_url">
             <li><input type="text" placeholder="Category?"class="form-control navbar-search" ng-model="user_corresponding_category">
             <button id="single-button" class="btn btn-primary" ng-click="acquire_article()">Pin!</button></li>
-            <li><a href="/#/userToBeChangedViaRoute">Username</a></li>
-          </ul>
+            <li><a href="/#/user">Welcome, {{ user_name }}</a></li>
+          </ul> <!-- /ng-controller -->
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>

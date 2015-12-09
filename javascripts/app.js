@@ -7,7 +7,7 @@ app.config(['$routeProvider',
         templateUrl: 'partials/main.html',
         controller: 'SearchCtrl'
       })
-      .when('/userToBeChangedViaRoute', {
+      .when('/:user', {
         templateUrl: 'partials/user-boards.html',
         controller: 'UserBoardsCtrl'
       })
