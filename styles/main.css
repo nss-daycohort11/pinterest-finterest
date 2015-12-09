@@ -4,11 +4,12 @@ body {
 /*
 Navbar
 */
-.navbar-left {
-  width: 50%; }
+#single-button {
+  background-color: #B8091B;
+  color: #FAFAF5; }
 
-.navbar-form .form-control {
-  width: 100%; }
+#navigationBar {
+  display: inline-block; }
 
 /*
 Pin Columns
