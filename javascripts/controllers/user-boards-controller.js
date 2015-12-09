@@ -12,8 +12,9 @@ app.controller("UserBoardsCtrl", ["$scope", "$routeParams", "auth-data", "$fireb
   // Figure out a way to only show those pins connected to a user_pins
 
   $scope.matched = [];
-  $scope.all_pins.$loaded(function() {
 
+  // Waits for info to load, then compares two databases to determine which pins belong to current user
+  $scope.all_pins.$loaded(function() {
 
 	  angular.forEach($scope.all_pins, function(fullPin) {
 	  	angular.forEach($scope.user_pins, function(userPin) {
@@ -24,7 +25,7 @@ app.controller("UserBoardsCtrl", ["$scope", "$routeParams", "auth-data", "$fireb
 	  		}
 	  	});
 	  	});
-	  $scope.matched;
+
   })
 
 }]);
