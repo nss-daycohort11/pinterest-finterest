@@ -2,6 +2,26 @@ $darkred: #800000;
 
 body {
   background-color: #cb2027;
+
+}
+
+h1 {
+	color: white;
+}
+
+div a {
+
+	text-decoration: none;
+	&:hover {
+		color: white;
+	}
+	&:focus {
+		color: white;
+	}
+	&:visited {
+		color: white;
+	}
+
 }
 
 /*
@@ -32,6 +52,19 @@ Navbar
 
 // }
 
+.search-btn {
+	color: white;
+	margin: 15px;
+}
+
+#form-group {
+	display: inline-block;
+}
+
+
+.btn .btn-primary {
+	margin: 205px;
+}
 
 /*
 Pin Columns

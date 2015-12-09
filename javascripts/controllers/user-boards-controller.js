@@ -21,9 +21,6 @@ app.controller("UserBoardsCtrl", ["$scope", "$routeParams", "auth-data", "$fireb
 	  			console.log("before indexOf");
 	  			console.log($scope.matched);
 	  			$scope.matched.push(fullPin);
-	  			// if ($scope.matched.indexOf(fullPin) !== -1) {
-	  			// 	console.log("matched", $scope.matched);
-	  			// }
 	  		}
 	  	});
 	  	});

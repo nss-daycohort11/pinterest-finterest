@@ -1,6 +1,18 @@
 body {
   background-color: #cb2027; }
 
+h1 {
+  color: white; }
+
+div a {
+  text-decoration: none; }
+  div a:hover {
+    color: white; }
+  div a:focus {
+    color: white; }
+  div a:visited {
+    color: white; }
+
 /*
 Navbar
 */
@@ -17,6 +29,16 @@ Navbar
 #container-fluid {
   width: 100%;
   vertical-align: middle; }
+
+.search-btn {
+  color: white;
+  margin: 15px; }
+
+#form-group {
+  display: inline-block; }
+
+.btn .btn-primary {
+  margin: 205px; }
 
 /*
 Pin Columns

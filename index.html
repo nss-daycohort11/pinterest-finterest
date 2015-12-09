@@ -11,6 +11,7 @@
 
 
 
+
         <!-- Navigation -->
 
     <div id="container-fluid">
@@ -34,6 +35,25 @@
                     </span>
                 </div>
               </div>
+<!-- =======
+
+    <nav id="navigationBar" class="navbar navbar-default" ng-controller="AuthCtrl">
+    <div id="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <a class="navbar-brand" href="/#/">Finterest</a>
+
+        <div class="navbar-form navbar-left" role="search">
+
+          <div class="form-group">
+            <div class="nav navbar-nav navbar-right input-group">
+
+                <input type="text" class="form-control navbar-search" placeholder="Search" ng-model="searchTerm" />
+
+                <span class="input-group-btn">
+                    <button id="single-button" class="btn btn-default" ng-click="setTerm()">Search</button>
+                </span>
+>>>>>>> master -->
             </div>
 
             <a class="nav navbar-nav navbar-brand" href="/#/{{userId}}">Welcome, {{ user_name }}</a>
@@ -53,8 +73,8 @@
               </div><!-- /.container-fluid -->
             </nav>
 
-        </div>
-    </div>
+        </div> <!-- closes container fluid -->
+    </div> <!-- closes outer container fluid nav -->
 
 
 
@@ -76,6 +96,7 @@
     <script src="lib/bower_components/angular-route/angular-route.js"></script>
     <script src="lib/bower_components/firebase/firebase.js"></script>
     <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="lib/bower_components/angular-filter/dist/angular-filter.min.js"></script>
 
 
 
