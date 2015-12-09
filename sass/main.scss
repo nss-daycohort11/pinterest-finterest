@@ -37,6 +37,7 @@ Navbar
 #single-button {
 	background-color: #cb2027;
 	border-color: white;
+	color: white;
 }
 
 .search-btn {
@@ -132,8 +133,12 @@ Pin Columns
 	color: white;
 }
 
+#columns .pin {
+	opacity: .9;
+}
+
 #columns:hover .pin:hover {
-	border: 1px solid $darkred;
+	opacity: 1;
 	.pin-button {
 		display: inline;
 	}

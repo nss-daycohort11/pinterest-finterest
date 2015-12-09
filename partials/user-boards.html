@@ -2,7 +2,7 @@
 
   <div ng-repeat="obj in matched | orderBy: 'category' ">
     <h1>{{obj.category}}</h1>
-    <p class="board_pin" category="obj.category"><a href="{{obj.url}}">{{obj.caption}}</a></p>
+    <p class="board_pin" category="obj.category"><a href="{{obj.url}}" target="_blank">{{obj.caption}}</a></p>
   </div>
 
 </div>
