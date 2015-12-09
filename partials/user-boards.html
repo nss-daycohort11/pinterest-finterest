@@ -1,6 +1,7 @@
 <div id="wrapper">
 
   <div ng-repeat="pinObject in all_pins">
+    // Figure out how to filter things by category here
     <h2>{{pinObject.category}}</h2>
     <p class="board_pin" category="pinObject.category">{{pinObject.caption}}</p>
   </div>
