@@ -1,6 +1,18 @@
 body {
   background-color: #cb2027; }
 
+h1 {
+  color: white; }
+
+div a {
+  text-decoration: none; }
+  div a:hover {
+    color: white; }
+  div a:focus {
+    color: white; }
+  div a:visited {
+    color: white; }
+
 /*
 Navbar
 */

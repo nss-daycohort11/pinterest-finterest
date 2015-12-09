@@ -4,6 +4,24 @@ body {
   background-color: #cb2027;
 }
 
+h1 {
+	color: white;
+}
+
+div a {
+
+	text-decoration: none;
+	&:hover {
+		color: white;
+	}
+	&:focus {
+		color: white;
+	}
+	&:visited {
+		color: white;
+	}
+}
+
 /*
 Navbar
 */ 
